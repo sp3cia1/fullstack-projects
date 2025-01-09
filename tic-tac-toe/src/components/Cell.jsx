@@ -1,8 +1,10 @@
 function Cell(props){
-    const { id } = props;
+    const { id,p1Cells,p2Cells,handleClick } = props;
 
     return(
-        <div className="cell"></div>
+        <div className="cell" onClick={() => handleClick(id)}>
+            {p1Cells.includes(id) ? "X" : p2Cells.includes(id) ? "O" : " " }
+        </div>
     )
 }
 
