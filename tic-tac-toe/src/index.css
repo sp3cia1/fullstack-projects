@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /*body height is content height only so it intially centeres the elemnet vertically based on that height only to fix this we set the min height of body to be 100vh or the entire screen in other words*/
+}
+
+.board{
+    background-color: #2091F6;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+    padding: 1em;
+    border-radius: 1.5em;
+}
+
+.cell{
+    background-color: aliceblue;
+    padding: 4.5em;
+    border-radius: 1em;
+}
