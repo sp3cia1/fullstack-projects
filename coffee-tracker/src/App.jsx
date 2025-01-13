@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 
 function App() {
 
-  const isAuthenticated = false
+  const isAuthenticated = true
 
   const authenticatedContent = (
     <>
