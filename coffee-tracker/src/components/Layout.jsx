@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useAuth } from '../context/AuthContext'
 import Authentication from "./Authentication"
 import Modal from "./Modal"
 
@@ -7,16 +8,26 @@ export default function Layout(props) {
 
     const [showModal, setShowModal] = useState(false);
 
+    const { globalUser,logout } = useAuth()
+
     const header = (
         <header>
             <div>
                 <h1 className="text-gradient">Coffee-Tracker</h1>
                 <p>For Coffee Insatiates</p>
             </div>
-            <button onClick={() => {setShowModal(true)}}>
-                <p>Sign up free</p>
-                <i className="fa-solid fa-mug-hot"></i>
-            </button>
+            {globalUser ? 
+            (
+                <button onClick={logout}>
+                    <p>Logout</p>
+                </button>
+            ) :
+            (
+                <button onClick={() => {setShowModal(true)}}>
+                    <p>Sign up free</p>
+                    <i className="fa-solid fa-mug-hot"></i>
+                </button>
+            )}
         </header>
     )
 
@@ -30,7 +41,7 @@ export default function Layout(props) {
         <>
             {showModal && (
                 <Modal handleCloseModal = {() => {setShowModal(false)}}>
-                    <Authentication/>
+                    <Authentication handleCloseModal = {() => {setShowModal(false)}} />
                 </Modal>
             )}
 
