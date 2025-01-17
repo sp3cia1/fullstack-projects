@@ -32,8 +32,6 @@ export default function Authentication(props){
         } finally{
             setIsAuthenticating(false)
         }
-
-        
     }
 
     return(
