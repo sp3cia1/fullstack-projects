@@ -1,11 +1,14 @@
-import Login from "./Login/Login.jsx"
+import { useState } from "react"
+import Login from "./components/Login.jsx"
+import { Home } from "./Home.jsx"
 
 function App() {
+  const [username, setUsername] = useState('')
 
-  return (
-    <>
-      <Login/>
-    </>
+  return username ? (
+    <Home username={username}/>
+  ) : (
+    <Login onSubmit={setUsername}/>
   )
 }
 

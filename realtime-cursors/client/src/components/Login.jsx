@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function Login({ onSubmit }){
     const [username, setUsername] = useState('');
-    console.log(username)
     return(
         <div>
             <h1>Welcome</h1>
