@@ -1,30 +1,39 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fugaz_One,Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const opensans = Open_Sans({ subsets: ["latin"] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const fugaz = Fugaz_One({
+  subsets: ['latin'],
+  weight: '400'
+})
 
 export const metadata = {
   title: "Mood-Tracker",
   description: "Track your daily moods every day of the year",
 };
 
+const header = (
+  <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
+    <h1 className={'text-lg sm:text-3xl textGradient ' + fugaz.className}>Mood-Tracker</h1>
+  </header>
+)
+
+const footer = (
+  <footer className="p-4 sm:p-8 grid place-items-center">
+    <p className={'text-indigo-600 text-lg ' + fugaz.className}>Created with ❤️</p>
+  </footer>
+)
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={'w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800 ' + opensans.className}
       >
-        <header>Header</header>
+        {header}
         {children}
-        <footer>dkmkcd</footer>
+        {footer}        
       </body>
     </html>
   );
