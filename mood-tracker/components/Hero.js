@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Fugaz_One } from 'next/font/google'
 import Button from './Button'
+import Calender from './Calender'
 
 const fugaz = Fugaz_One({
   subsets: ['latin'],
@@ -20,6 +21,7 @@ export default function Hero() {
         <Button text="Sign Up"/>
         <Button text="Login" dark/>
       </div>
+      <Calender/>
     </div>
   )
 }
