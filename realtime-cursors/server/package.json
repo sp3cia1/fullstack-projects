@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "server": "file:",
     "uuid": "^11.0.5",
     "ws": "^8.18.0"
   }
